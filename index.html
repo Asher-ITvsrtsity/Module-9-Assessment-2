@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>World Time</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <p>Loading...</p>
+        <div id="output"></div>
+
+        <script>
+            var cities = [
+                            {name: "Istanbul", utcOffset: 3, flag: "Turkey.png"},
+                            {name: "New York City", utcOffset: -5, flag: "United-States-of-America.png"},
+                            {name: "Tokyo", utcOffset: 9, flag: "Japan.png"},
+                            {name: "Moscow", utcOffset: 3, flag: "Russia.png"},
+                            {name: "Rio De Janeiro", utcOffset: -3, flag: "Brazil.png"},
+                            {name: "Sydney", utcOffset: 11, flag: "Australia.png"},
+                            {name: "Vancouver", utcOffset: -8, flag: "Canada.png"},
+                            {name: "Beijing", utcOffset: 8, flag: "China.png"}
+                        ];
+
+
+            function getUtcTime(){
+                var dt = new Date();
+                var utcOffset = dt.getTimezoneOffset() * 60000; 
+                var utcTime = new Date(dt.getTime() + utcOffset);
+                return utcTime.getTime();
+            }
+        </script>
+    </body>
+</html>
